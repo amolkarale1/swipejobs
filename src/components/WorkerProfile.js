@@ -9,35 +9,46 @@ import {
   GeoAlt,
   Gear,
   PersonCircle,
-} from "react-bootstrap-icons"
+} from "react-bootstrap-icons";
 
-import Header from  "./Header"
-import CompanyDetails from './CompanyDetails'
-import WorkerOptions from './WorkerOptions'
+import Header from "./Header";
+import CompanyDetails from "./CompanyDetails";
+import WorkerOptions from "./WorkerOptions";
 
 function WorkerProfile() {
   const state = useContext(JobDetailsContext);
   if (state.state.length > 0) {
-    const { personName, matchingJobs } = state.state[0]
+    const { personName, matchingJobs } = state.state[0];
+    return (
+      <Container fluid>
+        <Row>
+          <Col md={{ span: 4, offset: 4 }}>
+            <Header personName={personName}></Header>
+            {matchingJobs &&
+              matchingJobs.map((jobDetail) => {
+               return( <Row className="mt-2">
+                  <Col
+                    md={12}
+                    style={{ padding: "15px", backgroundColor: "lightgray" }}
+                  >
+                    <CompanyDetails companyInfo = {jobDetail.company}
+                     jobInfo = {jobDetail.jobTitle}
+                      milesToTravel={jobDetail.milesToTravel}
+                      requirements = {jobDetail.requirements}
+                      wagesPerHour = {jobDetail.wagePerHourInCents}
+                      shiftDates = {jobDetail.shifts[0]}
+                      />
+                    <WorkerOptions />
+                  </Col>
+                </Row>)
+              })}
+          </Col>
+        </Row>
+      </Container>
+    );
+  } else {
+    return <div>No Data Found</div>;
   }
-  return (
-    <Container fluid>
-      <Row>
-        <Col md={{ span: 4, offset: 4 }}>
-          <Header></Header>
-          <Row>
-            <Col
-              md={12}
-              style={{ padding: "15px", backgroundColor: "lightblue" }}
-            >
-              <CompanyDetails/>
-              <WorkerOptions/>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
-  );
 }
 
 export default WorkerProfile;

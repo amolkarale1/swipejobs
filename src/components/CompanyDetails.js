@@ -9,7 +9,10 @@ import {
     PersonCircle,
   } from "react-bootstrap-icons"
 import job from "../images/job.jpeg"
-function CompanyDetails() {
+function CompanyDetails(props) {
+
+    const {companyInfo, jobInfo, milesToTravel, requirements,wagesPerHour,shiftDates} = props
+    console.log('hhhh',requirements);
     return (
         <>  
               <Row>
@@ -18,16 +21,15 @@ function CompanyDetails() {
                     {
                       <Card.Img
                         variant="top"
-                        src={job}
+                        src={jobInfo.imageUrl}
                         width={170}
                         height={100}
                       />
                     }
                     <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
+                      <Card.Title>{jobInfo.name}</Card.Title>
                       <Card.Text>
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                        {companyInfo.name}
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -36,76 +38,77 @@ function CompanyDetails() {
 
               <Row
                 className="mb-3 g-0 p-1"
-                style={{ backgroundColor: "green" }}
+                style={{ backgroundColor: "lightgreen" }}
               >
                 <Col className="">
                   <div>
                     <p className="mb-0">Distance</p>
-                    <h4 className="mb-0">5.6 miles</h4>
+                    <h4 className="mb-0">{milesToTravel.toFixed(1)} miles</h4>
                   </div>
                 </Col>
                 <Col className="">
                   <div className="text-end">
                     <p className="mb-0">Hourly rate</p>
-                    <h4 className="mb-0">$13.50</h4>
+                    <h4 className="mb-0">${(wagesPerHour/100).toFixed(2)}</h4>
                   </div>
                 </Col>
               </Row>
 
-              <Row className="mb-3">
+              <Row className="company-info g-0">
                 <Col md={12}>
                   <div className="d-flex">
                     <CalendarFill
                       size={25}
-                      className="align-self-center me-3"
+                      className="align-self-center me-3 ms-3"
                     />
                     <div>
-                      <h5 className="fw-bold mb-0">Shift Dates</h5>
-                      <p className="mb-0">APR 7, WED 8:00 AM - 10:00 PM PDT</p>
-                      <p className="mb-0">APR 7, WED 8:00 AM - 10:00 PM PDT</p>
+                      <h6 className="mb-0">Shift Dates</h6>
+                      <p className="mb-0">{shiftDates.startDate}</p>
+                      <p className="mb-0">{shiftDates.endDate}</p>
                     </div>
                   </div>
                 </Col>
               </Row>
 
-              <Row className="mb-3">
+              <Row className="company-info g-0">
                 <Col md={12}>
                   <div className="d-flex">
-                    <GeoAlt size={25} className="align-self-center me-3" />
+                    <GeoAlt size={25} className="align-self-center me-3 ms-3" />
                     <div>
-                      <h5 className="fw-bold mb-0">Location</h5>
-                      <p className="mb-0">123 Main Street Tacome</p>
+                      <h6 className="mb-0">Location</h6>
+                      <p className="mb-0">{companyInfo.address.formattedAddress}</p>
                       <p className="mb-0">
-                        5.62 miles from your Job Search Location
+                        {milesToTravel} miles from your Job Search Location
                       </p>
                     </div>
                   </div>
                 </Col>
               </Row>
 
-              <Row className="mb-3">
+              <Row className="company-info g-0">
                 <Col md={12}>
                   <div className="d-flex">
-                    <Gear size={25} className="align-self-center me-3" />
+                    <Gear size={25} className="align-self-center me-3 ms-3" />
                     <div>
-                      <h5 className="fw-bold mb-0">Requirements</h5>
-                      <p className="mb-0">- Safety Vest</p>
-                      <p className="mb-0">- Hard Hat</p>
+                      <h6 className="mb-0">Requirements</h6>
+                      {requirements && requirements.map((requirement)=>{
+                            return ( <p className="mb-0">- {requirement}</p> )
+                      })}
                     </div>
                   </div>
                 </Col>
               </Row>
 
-              <Row className="mb-3">
+              <Row className="mb-3 company-info g-0">
                 <Col md={12}>
                   <div className="d-flex">
                     <PersonCircle
                       size={25}
-                      className="align-self-center me-3"
+                      className="align-self-center me-3 ms-3"
                     />
                     <div>
-                      <h5 className="fw-bold">Report To</h5>
-                      <p className="mb-0">Dave(123) 456 789s</p>
+                      <h6 className="mb-0">Report To</h6>
+                      <p className="mb-0">{companyInfo.reportTo.name} {companyInfo.reportTo.phone}</p>
                     </div>
                   </div>
                 </Col>

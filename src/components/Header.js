@@ -2,7 +2,7 @@ import React from 'react'
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
-function Header() {
+function Header({personName}) {
     return (
         <Row>
             <Col
@@ -21,7 +21,7 @@ function Header() {
               }}
               className="text-end"
             >
-              <h3>Jim Rose</h3>
+              <h3>{personName}</h3>
             </Col>
           </Row>
     )
