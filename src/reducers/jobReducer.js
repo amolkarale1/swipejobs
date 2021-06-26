@@ -7,7 +7,7 @@ export function jobReducer(state = initialstate,action){
             const prevState = [...state]
             
                 let workerDetails = {workerId:action.payload.workerId,
-                    personName:`${action.payload.firstName} ${action.lastName}`,matchingJobs:[]}
+                    personName:`${action.payload.firstName} ${action.payload.lastName}`,matchingJobs:[]}
                     console.log(prevState)
                     return [...prevState, workerDetails]
              return state;
