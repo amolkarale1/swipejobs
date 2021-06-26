@@ -26,21 +26,24 @@ function WorkerProfile() {
             <Header personName={personName}></Header>
             {matchingJobs &&
               matchingJobs.map((jobDetail) => {
-               return( <Row className="" key={jobDetail.jobId}>
-                  <Col
-                    md={12}
-                    style={{ padding: "15px", backgroundColor: "lightgray" }}
-                  >
-                    <CompanyDetails companyInfo = {jobDetail.company}
-                     jobInfo = {jobDetail.jobTitle}
-                      milesToTravel={jobDetail.milesToTravel}
-                      requirements = {jobDetail.requirements}
-                      wagesPerHour = {jobDetail.wagePerHourInCents}
-                      shiftDates = {jobDetail.shifts[0]}
+                return (
+                  <Row className="" key={jobDetail.jobId}>
+                    <Col
+                      md={12}
+                      style={{ padding: "15px", backgroundColor: "lightgray" }}
+                    >
+                      <CompanyDetails
+                        companyInfo={jobDetail.company}
+                        jobInfo={jobDetail.jobTitle}
+                        milesToTravel={jobDetail.milesToTravel}
+                        requirements={jobDetail.requirements}
+                        wagesPerHour={jobDetail.wagePerHourInCents}
+                        shiftDates={jobDetail.shifts[0]}
                       />
-                    <WorkerOptions />
-                  </Col>
-                </Row>)
+                      <WorkerOptions />
+                    </Col>
+                  </Row>
+                );
               })}
           </Col>
         </Row>
