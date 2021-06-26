@@ -23,14 +23,16 @@ function WorkerProfile() {
       <Container fluid>
         <Row>
           <Col md={{ span: 4, offset: 4 }}>
-            <Header personName={personName}></Header>
+            
             {matchingJobs &&
               matchingJobs.map((jobDetail) => {
                 return (
+                  <>
+                  <Header personName={personName}></Header>
                   <Row className="" key={jobDetail.jobId}>
                     <Col
                       md={12}
-                      style={{ padding: "15px", backgroundColor: "lightgray" }}
+                      className = "job-info"
                     >
                       <CompanyDetails
                         companyInfo={jobDetail.company}
@@ -43,6 +45,7 @@ function WorkerProfile() {
                       <WorkerOptions />
                     </Col>
                   </Row>
+                  </>
                 );
               })}
           </Col>
@@ -50,7 +53,7 @@ function WorkerProfile() {
       </Container>
     );
   } else {
-    return <div>No Data Found</div>;
+    return <div>...Loading </div>;
   }
 }
 

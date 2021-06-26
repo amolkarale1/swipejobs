@@ -1,3 +1,17 @@
 .company-info{
     background-color:white;
 }
+
+.company-location{
+    background-color:lightgreen;
+}
+
+.header{
+    background-color: black;
+    color:white;
+}
+
+.job-info{
+    background-color:lightgrey;
+    padding:15px;
+}

@@ -7,13 +7,13 @@ function WorkerOptions() {
   return (
     <Row className="mb-3 g-1">
       <Col>
-        <Button style={{ width: "100%" }} variant="secondary">
+        <Button className="w-100" variant="secondary">
           No thanks
         </Button>
       </Col>
 
       <Col>
-        <Button style={{ width: "100%" }} variant="dark">
+        <Button className="w-100"  variant="dark">
           I will take it
         </Button>
       </Col>

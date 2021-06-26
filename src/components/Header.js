@@ -6,20 +6,13 @@ function Header({ personName }) {
   return (
     <Row>
       <Col
-        style={{
-          backgroundColor: "black",
-          color: "white",
-        }}
-        className="text-start"
+        className="text-start header"
       >
         <h3>swipe jobs</h3>
       </Col>
       <Col
-        style={{
-          backgroundColor: "black",
-          color: "white",
-        }}
-        className="text-end"
+    
+        className="text-end header"
       >
         <h3>{personName}</h3>
       </Col>

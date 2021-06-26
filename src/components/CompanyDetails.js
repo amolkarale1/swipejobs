@@ -18,7 +18,7 @@ function CompanyDetails(props) {
     wagesPerHour,
     shiftDates,
   } = props;
-  console.log("hhhh", requirements);
+
   return (
     <>
       <Row>
@@ -40,7 +40,7 @@ function CompanyDetails(props) {
         </Col>
       </Row>
 
-      <Row className="mb-3 g-0 p-1" style={{ backgroundColor: "lightgreen" }}>
+      <Row className="mb-3 g-0 p-1 company-location">
         <Col className="">
           <div>
             <p className="mb-0">Distance</p>
