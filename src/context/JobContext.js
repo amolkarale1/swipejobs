@@ -6,6 +6,7 @@ const initialstate = [];
 export const workerId = "7f90df6e-b832-44e2-b624-3143d428001f";
 function JobContext({ children }) {
   const [state, dispatch] = useReducer(jobReducer, initialstate);
+  
   useEffect(() => {
     getProfile();
   }, []);
