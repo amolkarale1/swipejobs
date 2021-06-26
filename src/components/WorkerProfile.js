@@ -9,8 +9,10 @@ import {
   GeoAlt,
   Gear,
   PersonCircle,
-} from "react-bootstrap-icons";
-import job from "../images/job.jpeg";
+} from "react-bootstrap-icons"
+
+import job from "../images/job.jpeg"
+
 function WorkerProfile() {
   const state = useContext(JobDetailsContext);
   if (state.state.length > 0) {
