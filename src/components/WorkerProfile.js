@@ -26,7 +26,7 @@ function WorkerProfile() {
             <Header personName={personName}></Header>
             {matchingJobs &&
               matchingJobs.map((jobDetail) => {
-               return( <Row className="mt-2">
+               return( <Row className="" key={jobDetail.jobId}>
                   <Col
                     md={12}
                     style={{ padding: "15px", backgroundColor: "lightgray" }}
