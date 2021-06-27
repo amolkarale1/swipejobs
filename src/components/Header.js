@@ -8,13 +8,13 @@ function Header({ personName }) {
       <Col
         className="text-start header"
       >
-        <h3>swipe jobs</h3>
+        <h3 data-testid="websitename">swipe jobs</h3>
       </Col>
       <Col
     
         className="text-end header"
       >
-        <h3>{personName}</h3>
+        <h3 data-testid="personname">{personName}</h3>
       </Col>
     </Row>
   );
