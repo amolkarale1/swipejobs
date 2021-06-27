@@ -27,9 +27,9 @@ function WorkerProfile() {
             {matchingJobs &&
               matchingJobs.map((jobDetail) => {
                 return (
-                  <>
+                  <div key={jobDetail.jobId}>
                   <Header personName={personName}></Header>
-                  <Row className="" key={jobDetail.jobId}>
+                  <Row className="" >
                     <Col
                       md={12}
                       className = "job-info"
@@ -45,7 +45,7 @@ function WorkerProfile() {
                       <WorkerOptions workerId={workerId} jobId={jobDetail.jobId}/>
                     </Col>
                   </Row>
-                  </>
+                  </div>
                 );
               })}
           </Col>

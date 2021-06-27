@@ -91,7 +91,7 @@ function CompanyDetails(props) {
               <h6 className="mb-0">Requirements</h6>
               {requirements &&
                 requirements.map((requirement) => {
-                  return <p className="mb-0">- {requirement}</p>;
+                  return <p className="mb-0" key={Math.random() * 100}>- {requirement}</p>;
                 })}
             </div>
           </div>
