@@ -40,7 +40,7 @@ function CompanyDetails(props) {
         </Col>
       </Row>
 
-      <Row className="mb-3 g-0 p-1 company-location">
+      <Row className="g-0 p-1 company-location">
         <Col className="">
           <div>
             <p className="mb-0">Distance</p>
@@ -57,7 +57,7 @@ function CompanyDetails(props) {
 
       <Row className="company-info g-0">
         <Col md={12}>
-          <div className="d-flex">
+          <div className="d-flex p-1 border-bottom-2 border-info">
             <CalendarFill size={25} className="align-self-center me-3 ms-3" />
             <div>
               <h6 className="mb-0">Shift Dates</h6>
@@ -70,13 +70,13 @@ function CompanyDetails(props) {
 
       <Row className="company-info g-0">
         <Col md={12}>
-          <div className="d-flex">
+          <div className="d-flex ">
             <GeoAlt size={25} className="align-self-center me-3 ms-3" />
             <div>
               <h6 className="mb-0">Location</h6>
               <p className="mb-0">{companyInfo.address.formattedAddress}</p>
               <p className="mb-0">
-                {milesToTravel} miles from your Job Search Location
+               <small>{milesToTravel} miles from your Job Search Location</small>
               </p>
             </div>
           </div>
@@ -85,7 +85,7 @@ function CompanyDetails(props) {
 
       <Row className="company-info g-0">
         <Col md={12}>
-          <div className="d-flex">
+          <div className="d-flex border-bottom-2 border-info">
             <Gear size={25} className="align-self-center me-3 ms-3" />
             <div>
               <h6 className="mb-0">Requirements</h6>
@@ -98,7 +98,7 @@ function CompanyDetails(props) {
         </Col>
       </Row>
 
-      <Row className="mb-3 company-info g-0">
+      <Row className="mb-3 company-info g-0 ">
         <Col md={12}>
           <div className="d-flex">
             <PersonCircle size={25} className="align-self-center me-3 ms-3" />

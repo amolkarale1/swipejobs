@@ -18,7 +18,7 @@ import WorkerOptions from "./WorkerOptions";
 function WorkerProfile() {
   const state = useContext(JobDetailsContext);
   if (state.state.length > 0) {
-    const { personName, matchingJobs } = state.state[0];
+    const { personName, workerId, matchingJobs } = state.state[0];
     return (
       <Container fluid>
         <Row>
@@ -42,7 +42,7 @@ function WorkerProfile() {
                         wagesPerHour={jobDetail.wagePerHourInCents}
                         shiftDates={jobDetail.shifts[0]}
                       />
-                      <WorkerOptions />
+                      <WorkerOptions workerId={workerId} jobId={jobDetail.jobId}/>
                     </Col>
                   </Row>
                   </>

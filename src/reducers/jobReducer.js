@@ -18,6 +18,14 @@ export function jobReducer(state = initialstate, action) {
       workerPrevState[0].matchingJobs = action.payload;
       console.log("uuu", workerPrevState);
       return workerPrevState;
+
+    case "ACCEPT_JOB" :
+      console.log(action.payload)
+      break;
+
+      case "REJECT_JOB" :
+      console.log(action.payload)
+      break;
   }
   return state;
 }
