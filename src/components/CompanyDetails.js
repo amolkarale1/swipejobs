@@ -1,16 +1,20 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { Card } from "react-bootstrap"
+import { Card } from "react-bootstrap";
 import {
   CalendarFill,
   GeoAlt,
   Gear,
   PersonCircle,
-} from "react-bootstrap-icons"
-import moment from "moment"
+} from "react-bootstrap-icons";
+import moment from "moment";
 
 function CompanyDetails(props) {
+  if (Object.keys(props).length == 0) {
+    return <div>No Data found</div>;
+  }
+
   const {
     companyInfo,
     jobInfo,
@@ -34,8 +38,10 @@ function CompanyDetails(props) {
               />
             }
             <Card.Body>
-              <Card.Title>{jobInfo.name}</Card.Title>
-              <Card.Text>{companyInfo.name}</Card.Text>
+              <Card.Title data-testid="jobname">{jobInfo.name}</Card.Title>
+              <Card.Text data-testid="companyname">
+                {companyInfo.name}
+              </Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -62,8 +68,10 @@ function CompanyDetails(props) {
             <CalendarFill size={25} className="align-self-center me-3 ms-3" />
             <div>
               <h6 className="mb-0">Shift Dates</h6>
-              <p className="mb-0">{moment(shiftDates.startDate).format('LLL')}</p>
-              <p className="mb-0">{moment(shiftDates.endDate).format('LLL') }</p>
+              <p className="mb-0">
+                {moment(shiftDates.startDate).format("LLL")}
+              </p>
+              <p className="mb-0">{moment(shiftDates.endDate).format("LLL")}</p>
             </div>
           </div>
         </Col>
@@ -76,8 +84,10 @@ function CompanyDetails(props) {
             <div>
               <h6 className="mb-0">Location</h6>
               <p className="mb-0">{companyInfo.address.formattedAddress}</p>
-              <p className="mb-0">
-               <small>{milesToTravel} miles from your Job Search Location</small>
+              <p className="mb-0" data-testid="milestotravel">
+                <small>
+                  {milesToTravel} miles from your Job Search Location
+                </small>
               </p>
             </div>
           </div>
@@ -92,7 +102,11 @@ function CompanyDetails(props) {
               <h6 className="mb-0">Requirements</h6>
               {requirements &&
                 requirements.map((requirement) => {
-                  return <p className="mb-0" key={Math.random() * 100}>- {requirement}</p>;
+                  return (
+                    <p className="mb-0" key={Math.random() * 100}>
+                      - {requirement}
+                    </p>
+                  );
                 })}
             </div>
           </div>
@@ -105,7 +119,7 @@ function CompanyDetails(props) {
             <PersonCircle size={25} className="align-self-center me-3 ms-3" />
             <div>
               <h6 className="mb-0">Report To</h6>
-              <p className="mb-0">
+              <p className="mb-0" data-testid="reportingperson">
                 {companyInfo.reportTo.name} {companyInfo.reportTo.phone}
               </p>
             </div>
