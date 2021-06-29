@@ -40,3 +40,16 @@
 .carousel-inner{
     overflow: unset;
 }
+
+.outer{
+    display: block;
+    text-align: center;
+}
+
+.inner{
+width: 94%;
+height: 2px;
+border-radius: 5px;
+background-color: grey;
+display: inline-block;
+}
