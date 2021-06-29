@@ -15,14 +15,16 @@ function WorkerProfile() {
 
     if(matchingJobs.length == 0 ){
         return (
-          <div class="alert alert-danger" role="alert">
+          <Container fluid>
             <Row>
-        
-        <Col md={{ span: 4, offset: 4 }}>
+            <Col md={{ span: 4, offset: 4 }}>
+            <div class="alert alert-danger" role="alert">
             No jobs found
-            </Col>
+              </div>
+              </Col>
+
             </Row>
-          </div>
+          </Container>
         )
     }
     return (
