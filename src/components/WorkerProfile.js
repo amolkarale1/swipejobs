@@ -24,7 +24,7 @@ function WorkerProfile() {
              
                 return (
                   <Carousel.Item interval={0}>
-                  <div key={jobDetail.jobId}>
+                  <div key={jobDetail.jobId} className="d-block w-100 mt-2">
                     {jobDetail.is_accepted && (
                        <div className="alert alert-success" role="alert">
                        Job Accepted Successfully
