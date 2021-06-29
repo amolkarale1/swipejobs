@@ -129,7 +129,7 @@ function CompanyDetails(props) {
         </Col>
       </Row>
 
-      <Row className="mb-3 company-info g-0 ">
+      <Row className="mb-3 company-info g-0 pb-2">
         <Col md={12}>
           <div className="d-flex">
             <PersonCircle size={25} className="align-self-center me-3 ms-3" />
