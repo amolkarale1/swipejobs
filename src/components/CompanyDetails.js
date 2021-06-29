@@ -51,13 +51,13 @@ function CompanyDetails(props) {
         <Col className="">
           <div className="ps-1">
             <p className="mb-0">Distance</p>
-            <h4 className="mb-0">{milesToTravel.toFixed(1)} miles</h4>
+            <h4 className="mb-0"><span class="text-white">{milesToTravel.toFixed(1)} miles</span></h4>
           </div>
         </Col>
         <Col className="">
           <div className="text-end pe-1">
             <p className="mb-0">Hourly rate</p>
-            <h4 className="mb-0">${(wagesPerHour / 100).toFixed(2)}</h4>
+            <h4 className="mb-0"><span class="text-white">${(wagesPerHour / 100).toFixed(2)}</span></h4>
           </div>
         </Col>
       </Row>
