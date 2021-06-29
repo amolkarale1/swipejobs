@@ -15,3 +15,28 @@
     background-color:lightgrey;
     padding:15px;
 }
+
+.carousel-control-next{
+    position:absolute;
+    top:50%;
+    left: 100%;
+    background-color: lightcoral;
+    height: 5%;
+}
+
+.carousel-control-prev{
+    position:absolute;
+    top:50%;
+    left:-15%;
+    background-color: lightcoral;
+    height: 5%;
+}
+
+.header{
+    padding-right: 1% !important;
+    padding-left: 1% !important;
+}
+
+.carousel-inner{
+    overflow: unset;
+}
