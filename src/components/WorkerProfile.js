@@ -3,14 +3,7 @@ import { JobDetailsContext } from "../context/JobContext";
 import "bootstrap/dist/css/bootstrap.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { Container, Card, Button, Media, Alert } from "react-bootstrap";
-import {
-  CalendarFill,
-  GeoAlt,
-  Gear,
-  PersonCircle,
-} from "react-bootstrap-icons";
-
+import { Container,Carousel } from "react-bootstrap";
 import Header from "./Header";
 import CompanyDetails from "./CompanyDetails";
 import WorkerOptions from "./WorkerOptions";
@@ -23,12 +16,14 @@ function WorkerProfile() {
       <Container fluid>
         {state.state[0].message}
         <Row>
+        
           <Col md={{ span: 4, offset: 4 }}>
-            
+          <Carousel interval={null} slide={false}>
             {matchingJobs &&
               matchingJobs.map((jobDetail) => {
-                console.log(jobDetail)
+             
                 return (
+                  <Carousel.Item interval={0}>
                   <div key={jobDetail.jobId}>
                     {jobDetail.is_accepted && (
                        <div className="alert alert-success" role="alert">
@@ -54,9 +49,12 @@ function WorkerProfile() {
                       </Col>
                     </Row>
                   </div>
+                  </Carousel.Item>
                 );
               })}
+                </Carousel>
           </Col>
+        
         </Row>
       </Container>
     );
