@@ -23,8 +23,8 @@ function WorkerProfile() {
               matchingJobs.map((jobDetail) => {
              
                 return (
-                  <Carousel.Item interval={0}>
-                  <div key={jobDetail.jobId} className="d-block w-100 mt-2">
+                  <Carousel.Item interval={0} key={jobDetail.jobId}>
+                  <div  className="d-block w-100 mt-2">
                     {jobDetail.is_accepted && (
                        <div className="alert alert-success" role="alert">
                        Job Accepted Successfully
