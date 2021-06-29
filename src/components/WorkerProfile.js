@@ -12,6 +12,19 @@ function WorkerProfile() {
   const state = useContext(JobDetailsContext);
   if (state.state.length > 0) {
     const { personName, workerId, matchingJobs } = state.state[0];
+
+    if(matchingJobs.length == 0 ){
+        return (
+          <div class="alert alert-danger" role="alert">
+            <Row>
+        
+        <Col md={{ span: 4, offset: 4 }}>
+            No jobs found
+            </Col>
+            </Row>
+          </div>
+        )
+    }
     return (
       <Container fluid>
         {state.state[0].message}
