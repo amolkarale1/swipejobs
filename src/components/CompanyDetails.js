@@ -75,11 +75,10 @@ function CompanyDetails(props) {
             </div>
           </div>
 
-          <div style={{display:'block',textAlign:'center'}}>
-          <div style={{width:'80%',height:'2px',borderRadius:'5px',backgroundColor:'grey',
-          display:'inline-block',marginTop:'5px',marginBottom:'5px'}}> 
-          
-          </div>
+          <div className="outer">
+            <div
+            className="inner"
+            ></div>
           </div>
         </Col>
       </Row>
@@ -97,6 +96,11 @@ function CompanyDetails(props) {
                 </small>
               </p>
             </div>
+          </div>
+          <div className="outer">
+            <div
+            className="inner"
+            ></div>
           </div>
         </Col>
       </Row>
@@ -116,6 +120,11 @@ function CompanyDetails(props) {
                   );
                 })}
             </div>
+          </div>
+          <div className="outer">
+            <div
+            className="inner"
+            ></div>
           </div>
         </Col>
       </Row>
