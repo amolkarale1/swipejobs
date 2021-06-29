@@ -49,13 +49,13 @@ function CompanyDetails(props) {
 
       <Row className="g-0 p-1 company-location">
         <Col className="">
-          <div>
+          <div className="ps-1">
             <p className="mb-0">Distance</p>
             <h4 className="mb-0">{milesToTravel.toFixed(1)} miles</h4>
           </div>
         </Col>
         <Col className="">
-          <div className="text-end">
+          <div className="text-end pe-1">
             <p className="mb-0">Hourly rate</p>
             <h4 className="mb-0">${(wagesPerHour / 100).toFixed(2)}</h4>
           </div>
@@ -64,7 +64,7 @@ function CompanyDetails(props) {
 
       <Row className="company-info g-0">
         <Col md={12}>
-          <div className="d-flex p-1 border-bottom-2 border-info">
+          <div className="d-flex p-1">
             <CalendarFill size={25} className="align-self-center me-3 ms-3" />
             <div>
               <h6 className="mb-0">Shift Dates</h6>
@@ -73,6 +73,13 @@ function CompanyDetails(props) {
               </p>
               <p className="mb-0">{moment(shiftDates.endDate).format("LLL")}</p>
             </div>
+          </div>
+
+          <div style={{display:'block',textAlign:'center'}}>
+          <div style={{width:'80%',height:'2px',borderRadius:'5px',backgroundColor:'grey',
+          display:'inline-block',marginTop:'5px',marginBottom:'5px'}}> 
+          
+          </div>
           </div>
         </Col>
       </Row>
